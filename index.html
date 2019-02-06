@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Etsy Recreation</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+              integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+              crossorigin="anonymous">
+        <link rel="stylesheet" href="./css/styles.css">
+
+    </head>
+    <body>
+
+        <main class="container"><div class="row"></div></main>
+
+        <script id="entry-template" type="text/x-handlebars-template">
+            {{#each results}}
+            <!--results matches are key-results in js. this will return each key in this HTML format-->
+            <div class="col-3">
+                <div class="card">
+                    <img src={{Images.0.url_170x135}} class="card-img-top" alt="#">
+                    <div class="card-body">
+                     <p class="card-text">{{title}}.</p>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </script>
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="./js/api-key.js"></script>
+        <script src="./js/main.js"></script>
+    </body>
+</html>
