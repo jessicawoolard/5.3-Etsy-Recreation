@@ -10,22 +10,21 @@ $(document).ready(function() {
         method: 'GET',
 
         success: function(response) {
-           console.log('response', response)
+           // console.log('response', response)
             var source   = $("#entry-template").html();
-            // this is going through HTML and getting all the "entry-templates"
+            // this is going through HTML and getting all the "entry-templates" and assigning them to "source"
             var template = Handlebars.compile(source);
-            // we are passing "source" through the compile method and passing in the template we just built
+            // we are passing "source" through Handlebars and using compile method and passing in the template we just built
 
             var context = {
                 results: response.results
             };
             // these are our results listing from esty from success function (response)
-            var html    = template(context);
-            // this is passing in our context into out template
+            var html = template(context);
+            // this is passing in our context into our template
             $('.row').html(html);
-
+        //    this is getting the "row" call from HTML and assigning it to our template that we assigned to "html"
         },
-
 
 // This will print in the console
         error: function (xhr) {
